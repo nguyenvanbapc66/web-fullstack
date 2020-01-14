@@ -15,12 +15,13 @@ let books = [
 
 let checkBookBtn = document.getElementById('btn-find-book')
 checkBookBtn.addEventListener('click', (book) => {
-    book = document.getElementById('input-wrapper').value
+    book = document.getElementById('input-wrapper')
+    book.value = ''
     let check = false
     let num = -1
 
     for(let i = 0; i < books.length; i++){
-        if(books[i].author === book || books[i].title === book){
+        if(books[i].author === book.value || books[i].title === book.value){
             check = true
             num = i
         }
