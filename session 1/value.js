@@ -43,31 +43,59 @@
 //     height.innerText = window.innerHeight
 // })
 
-let books = [
-    { 
-        author: 'Bill Gates', 
-        title: 'The Road Ahead' 
-    },
-    { 
-        author: 'Steve Jobs', 
-        title: 'Walter Isaacson' 
-    },
-    { 
-        author: 'Suzanne Collins', 
-        title: 'Mockingjay: The Final Book of The Hunger Games'
-    }
-]
+// let books = [
+//     { 
+//         author: 'Bill Gates', 
+//         title: 'The Road Ahead' 
+//     },
+//     { 
+//         author: 'Steve Jobs', 
+//         title: 'Walter Isaacson' 
+//     },
+//     { 
+//         author: 'Suzanne Collins', 
+//         title: 'Mockingjay: The Final Book of The Hunger Games'
+//     }
+// ]
 
-function getObjectKey(obj) {
-    let objResult = []
-    for (keys in obj) {
-        if (typeof obj[keys] == "object") {
-            objResult.push(keys)
-            objResult = objResult.concat(getObjectKey(obj[keys]))
-        } else {
-            objResult.push(keys);
-        }
+// function getObjectKey(obj) {
+//     let objResult = []
+//     for (keys in obj) {
+//         if (typeof obj[keys] == "object") {
+//             objResult.push(keys)
+//             objResult = objResult.concat(getObjectKey(obj[keys]))
+//         } else {
+//             objResult.push(keys);
+//         }
+//     }
+//     return objResult;
+// }
+// console.log(getObjectKey(books));
+
+const books = [
+    { author: "Bill Gates", title: "The Road Ahead" },
+    { author: "Steve Jobs", title: "Walter Isaacson" },
+    {
+      author: "Suzanne Collins",
+      title: "Mockingjay: The Final Book of The Hunger Games"
     }
-    return objResult;
-}
-console.log(getObjectKey(books));
+  ];
+  function keyCode(event) {
+    var x = event.keyCode;
+    if (x == 13) {
+      findBook();
+    }
+  }
+  function findBook() {
+    const inputText = document.getElementById("searchInput").value.trim();
+    console.log(inputText);
+    const found = books.find(
+      element => element.author === inputText || element.title === inputText
+    );
+    console.log(found);
+    document.getElementById("result").innerHTML =
+      "<strong>Author:</strong>" +
+      found.author +
+      ", <strong>Title:</strong>" +
+      found.title;
+  }
