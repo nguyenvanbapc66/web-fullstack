@@ -8,7 +8,8 @@ const formidable = require("formidable");
  
 const server = http.createServer((req, res) => {
     if (req.url == "/upload" && req.method.toLowerCase() == "post") {
-      let form = new formidable.IncomingForm();      
+      let form = new formidable.IncomingForm();  
+
       form.uploadDir = "uploads/"
       form.parse(req, (err, fields, files) => {
         if (err) throw err;
@@ -35,6 +36,7 @@ const server = http.createServer((req, res) => {
       });
       return;
     }
+      
     let urlData = url.parse(req.url, true);
     let fileName = "./views" + urlData.pathname;
     if(urlData.pathname === "/") {
