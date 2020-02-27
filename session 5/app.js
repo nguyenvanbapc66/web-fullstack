@@ -12,6 +12,9 @@ app.set('views', path.join(__dirname, '/public'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
+app.use(express.static('./public'))
+app.use('/api', api)
+
 app.get('/question', (req, res) => {
     let options = {
       root: path.join(__dirname, 'public')
@@ -19,7 +22,11 @@ app.get('/question', (req, res) => {
     res.sendFile('./questions.ejs', options)
 })
 
-app.use(express.static('./public'))
-app.use('/api', api)
+app.get('/answer', (req, res) => {
+    let options = {
+      root: path.join(__dirname, 'public')
+    }
+    res.sendFile('./answers.ejs', options)
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

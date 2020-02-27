@@ -30,21 +30,23 @@ router.route('/question')
 
 router.route('/answer')
     .post((req, res) => {
-        console.log(req.body.rightSubmit)
-        fs.writeFile('./answers.txt', req.body.rightSubmit, (err, data) => {
-            if(err){
-                res.end(err)
-            } else{
-                res.end('Submit successfully')
-            }
-        })
-        fs.writeFile('./answers.txt', req.body.wrongSubmit, (err, data) => {
-            if(err){
-                res.end(err)
-            } else{
-                res.end('Submit successfully')
-            }
-        })
+        if(req.body.rightSubmit){
+            fs.writeFile('./answers.txt', req.body.rightSubmit, (err, data) => {
+                if(err){
+                    res.end(err)
+                } else{
+                    res.end('Submit successfully')
+                }
+            })
+        } else{
+            fs.writeFile('./answers.txt', req.body.wrongSubmit, (err, data) => {
+                if(err){
+                    res.end(err)
+                } else{
+                    res.end('Submit successfully')
+                }
+            })
+        }
     })
 
 module.exports = router
