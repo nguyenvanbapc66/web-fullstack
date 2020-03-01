@@ -15,15 +15,16 @@ const server = http.createServer((req, res) => {
         if (err) throw err;
 
         let tmpPath = files.file.path;
-        let newPath = form.uploadDir + files.file.name;
+        let nameFile = form.uploadDir + files.file.name;
 
-        fs.rename(tmpPath, newPath, (err) => {
+        fs.rename(tmpPath, nameFile, (err) => {
           if (err) throw err;
           
           switch (files.file.type) {
             case "image/jpeg":
-              fs.readFile(newPath, (err, fileUploaded) => {
+              fs.readFile(nameFile, (err, fileUploaded) => {
                 res.writeHead(200,{"Content-type":"image/jpeg"});
+                console.log(fileUploaded)
                 res.end(fileUploaded);
               });
               break;

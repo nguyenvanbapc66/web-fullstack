@@ -1,0 +1,4 @@
+1. An ecommerce website (like Amazon,...) - Web thương mại điện tử
+2. A social media platform (like facebook, instagram,...) - Một nền tảng truyền thông xã hội
+3. Chat applications which includes Real time updates (Already did this)
+4. News feeds (flipboard) - nguồn cung cấp tin tức

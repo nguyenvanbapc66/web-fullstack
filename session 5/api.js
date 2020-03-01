@@ -48,5 +48,16 @@ router.route('/answer')
             })
         }
     })
+    .get((req, res) => {
+        fs.readFile('./answers.txt', 'utf8', (err, data) => {
+            if(err){
+                res.end(err)
+            } else{
+                res.render('answers', {
+                    answer: data
+                })
+            }
+        })
+    })
 
 module.exports = router

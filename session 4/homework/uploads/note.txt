@@ -1,0 +1,75 @@
+css:
+	dàn trang (flex)
+	kích thước, khoảng cách
+	màu sắc
+	sử dụng 5 thuộc tính: width, height, margin, padding, border
+
+
+#footer {
+    /* ... css code ... */
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    background: white;
+    width: 50%;
+    height: 500px;
+    border: 1px solid black;
+    /* Khoảng cách giữa cách nội dung */
+    margin-top: 20px;
+    /* Khoảng cách giữa khung */
+    padding: 20px;
+}
+
+
+*MVC (Mô hình) (Chia nhỏ code)
+- Model: Dữ liệu
+- Controller: Sử lý dữ liệu
+- View: Phần hiển thị
+
+-JS:
+ + Sự kiện (Event): Name - handler
+		"click" alert()
+		"change" findSuggestions()
+ + DOM: 
+
+
+*Note:
+- SPA (Single page app)
+- Form submit + form validation
+- Firebase: + Account + project
+	+ Intograte
+	+ Auther
+- Register:
+	1. Get info
+	2. Validate info
+	3. Submit info
+- Login: -> firebase
+
+
+- Màu xanh lá cây đẹp: #42b72a
+- Mùa xanh biển đẹp: #3578E5
+
+
+- firestore: collection ~ bảng
+	document ~ bản tin
+	C R U D (create read upadate delete)
+	
+	1. Read
+	 - get Mang
+	 - get One
+	2. Create
+	3. Update
+	4. Delete
+
+Realtime update: .onSnapshot()
+
+Tìm hiểu về socket (real-time)
+
+Ryactor: - Tổ chức code
+	- Dọn rác
+
+Chia công việc trang web: - Auth (Đăng nhập, đăng kí)
+			- Tên gì đấy (Nội dung chính của web)
+			- Chat (Nếu có)
+
+Câu lệnh load lại trang trc: window.
