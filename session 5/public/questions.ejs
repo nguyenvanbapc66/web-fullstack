@@ -6,11 +6,11 @@
     <title>Question</title>
 </head>
 <body>
-    <form action="/api/answer" method="POST">
+    <form action="/api/answer" method="GET">
         <h1><%= question %></h1>
         <div>
-            <input name="rightSubmit" type="submit" value="Có/Đúng">
-            <input name="wrongSubmit" type="submit" value="Không/Sai">
+            <input name="answer" type="submit" value="Có/Đúng">
+            <input name="answer" type="submit" value="Không/Sai">
         </div>
     </form>
 </body>

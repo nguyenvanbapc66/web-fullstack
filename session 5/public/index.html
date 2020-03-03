@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create question</title>
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
 </head>
 <body>
     <form action="/api/question" method="POST">
         <textarea name="question" rows="3" placeholder="Nhập câu hỏi"></textarea>
         <button type="submit">Lưu</button>
     </form>
+    <div id="div"></div>
+
+    <script>
+        // $('button').click(function(e){
+        //     e.preventDefault()
+        //     console.log('click')
+
+        //     $.ajax({
+        //         url: '/api/question',
+        //         method: 'POST',
+        //         data: {
+        //             question: $('form textarea').val()
+        //         },
+        //         success: function(result){
+        //             $('#div').html(result)
+        //         }
+        //     })
+        // })
+    </script>
 </body>
 </html>
