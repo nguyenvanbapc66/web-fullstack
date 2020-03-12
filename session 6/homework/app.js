@@ -4,22 +4,7 @@ $(document).ready(function(){
         for (let i = 0; i < 6; i++) {
             colors += letters[Math.floor(Math.random() * 16)]
         }
-        $('#random-quote').css({
-            color: colors,
-            transition: 'all 1s ease 0s'
-        })
-        $('#random-author').css({
-            color: colors,
-            transition: 'all 1s ease 0s'
-        })
-        $('#btn').css({
-            background: colors,
-            transition: 'all 1s ease 0s'
-        })
-        $('#container').css({
-            background: colors,
-            transition: 'all 1s ease 0s'
-        })
+        changColor(colors)
         $('#btn').click(function(){
             $.ajax({
                 url: 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json',
@@ -34,7 +19,6 @@ $(document).ready(function(){
                     for (let i = 0; i < 6; i++) {
                         colors += letters[Math.floor(Math.random() * 16)]
                     }
-                    console.log(colors)
 
                     let modalQuote = `
                         <i class="fas fa-quote-left"></i>
@@ -46,23 +30,27 @@ $(document).ready(function(){
                     `
                     $('#random-quote').html(modalQuote)
                     $('#random-author').html(modalAuthor)
-                    $('#random-quote').css({
-                        color: colors,
-                        transition: 'all 1s ease 0s'
-                    })
-                    $('#random-author').css({
-                        color: colors,
-                        transition: 'all 1s ease 0s'
-                    })
-                    $('#btn').css({
-                        background: colors,
-                        transition: 'all 1s ease 0s'
-                    })
-                    $('#container').css({
-                        background: colors,
-                        transition: 'all 1s ease 0s'
-                    })
+                    changColor(colors)
                 }
             })
         })
 })
+
+function changColor(colors){
+    $('#random-quote').css({
+        color: colors,
+        transition: 'all 1s ease 0s'
+    })
+    $('#random-author').css({
+        color: colors,
+        transition: 'all 1s ease 0s'
+    })
+    $('#btn').css({
+        background: colors,
+        transition: 'all 1s ease 0s'
+    })
+    $('#container').css({
+        background: colors,
+        transition: 'all 1s ease 0s'
+    })
+}

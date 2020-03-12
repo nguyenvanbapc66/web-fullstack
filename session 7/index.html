@@ -1,18 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <div id="mydiv"></div>
 
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="./app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <header>
+        <div class="collapse bg-dark" id="collapseExample">
+            <div class="container">
+                <div class="row">
+                    <div class="card card-body bg-dark border-0 d-flex flex-row justify-content-between">
+                        <div class="text-light text-justify col-6 mx-5">
+                            <h1>About</h1>
+                            Add some information about the album below, the author, or any other background context. 
+                            Make it a few sentences long so folks can pick up some informative tidbits. 
+                            Then, link them off to some social networking sites or contact information.
+                        </div>
+                        <div class="text-light col-6 mx-5">
+                            <h1>Contact</h1>
+                            Follow on Twitter
+                            <br>
+                            Like on Facebook
+                            <br>
+                            Email me
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between px-5">
+            <div>
+                <a class="fas fa-camera text-light mr-2" href="#"></a>
+                <a class="navbar-brand" href="#">Album</a>
+            </div>
+            <button class="btn btn-lg btn-dark" data-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="true" aria-controls="collapseExample">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    <section class="mt-5">
+        <h1 class="text-center">Album example</h1>
+        <p class="text-center">
+            Something short and leading about the collection below—its contents,
+            simply skip over it entirely.
+        </p>
+        <p class="text-center">
+            the creator, etc. Make it short and sweet, but not too short so folks don’t
+        </p>
+        <p class="text-center">
+            simply skip over it entirely.
+        </p>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary">Main call to action</button>
+            <button type="button" class="btn btn-secondary">Secondary action</button>
+        </div>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="card mx-auto" style="width: 100%;">
+                        <img src="./1200px-Image_created_with_a_mobile_phone.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="button" class="btn btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-outline-secondary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mx-auto" style="width: 100%;">
+                        <img src="./1200px-Image_created_with_a_mobile_phone.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="button" class="btn btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-outline-secondary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mx-auto" style="width: 100%;">
+                        <img src="./1200px-Image_created_with_a_mobile_phone.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="button" class="btn btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-outline-secondary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="card mx-auto" style="width: 100%;">
+                        <img src="./1200px-Image_created_with_a_mobile_phone.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="button" class="btn btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-outline-secondary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mx-auto" style="width: 100%;">
+                        <img src="./1200px-Image_created_with_a_mobile_phone.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="button" class="btn btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-outline-secondary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mx-auto" style="width: 100%;">
+                        <img src="./1200px-Image_created_with_a_mobile_phone.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <button type="button" class="btn btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-outline-secondary">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="mt-5 py-5 d-flex justify-content-between" style="background: #e7e7e7; padding: 0 13%;">
+        <p>
+            Album example is © Bootstrap, but please download and customize it for yourself!
+            <br>
+            New to Bootstrap? Visit the homepage or read our getting started guide.
+        </p>
+        <p>
+            Back to top
+        </p>
+    </footer>
 </body>
+
 </html>
