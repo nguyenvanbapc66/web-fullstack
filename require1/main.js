@@ -1,35 +1,39 @@
-let ball = document.getElementById('img')
+const fill = document.querySelector('.fill');
+const empties = document.querySelectorAll('.empty');
 
-ball.onmousedown = function (event) { // (1) start the process
+fill.addEventListener('dragstart', dragStart);
+fill.addEventListener('dragend', dragEnd);
 
-    // (2) prepare to moving: make absolute and on top by z-index
-    ball.style.position = 'absolute';
-    ball.style.zIndex = 1000;
-    // move it out of any current parents directly into body
-    // to make it positioned relative to the body
-    document.body.append(ball);
-    // ...and put that absolutely positioned ball under the pointer
+for (const empty of empties) {
+  empty.addEventListener('dragover', dragOver);
+  empty.addEventListener('dragenter', dragEnter);
+  empty.addEventListener('dragleave', dragLeave);
+  empty.addEventListener('drop', dragDrop);
+}
 
-    moveAt(event.pageX, event.pageY);
+function dragStart() {
+  this.className += ' hold';
+  setTimeout(() => (this.className = 'invisible'), 0);
+}
 
-    // centers the ball at (pageX, pageY) coordinates
-    function moveAt(pageX, pageY) {
-        ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
-        ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
-    }
+function dragEnd() {
+  this.className = 'fill';
+}
 
-    function onMouseMove(event) {
-        moveAt(event.pageX, event.pageY);
-    }
+function dragOver(e) {
+  e.preventDefault();
+}
 
-    // (3) move the ball on mousemove
-    document.addEventListener('mousemove', onMouseMove);
+function dragEnter(e) {
+  e.preventDefault();
+  this.className += ' hovered';
+}
 
-    // (4) drop the ball, remove unneeded handlers
-    ball.onmouseup = function () {
-        document.removeEventListener('mousemove', onMouseMove);
-        // ball.onmouseup = null;
-        
-    };
+function dragLeave() {
+  this.className = 'empty';
+}
 
-};
+function dragDrop() {
+  this.className = 'empty';
+  this.append(fill);
+}
