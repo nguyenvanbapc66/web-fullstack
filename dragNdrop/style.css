@@ -5,7 +5,8 @@ body {
 .fill {
     background-image: url('https://source.unsplash.com/random/150x150');
     position: relative;
-    height: 150px;
+    min-height: 150px;
+    height: auto;
     width: 150px;
     top: 5px;
     left: 5px;
