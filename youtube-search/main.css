@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.title-thumbnail {
+    text-align: center;
+    width: 43%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn .btn-primary {
+    width: auto;
+}
+
+.form-group .btn {
+    width: 10%;
+}
