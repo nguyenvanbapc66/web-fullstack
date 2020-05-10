@@ -20,96 +20,120 @@ $(document).ready(function() {
     })
 })
 
-// $(document).ready(function(){
-//     let form = $('#search')
-//     form.submit(function(e){
-//         e.preventDefault()
-
-//         var keyword = form[0].keyword.value
-//         let api = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&type=video&key=AIzaSyCR-MWGP-Dk3TI4iKJDxwiOAuOa-j1PbEc`
-
-//         $('#result-list').html('')
-//         $.ajax({
-//             url: api,
-//             method: 'GET',
-//             success: function(result){
-//                 console.log(result)
-//                 var nextPageToken = result.nextPageToken
-//                 console.log(nextPageToken)
-
-//                 result.items.map(function(item){
-//                     let id = item.id.videoId
-//                     let image = item.snippet.thumbnails.high.url
-//                     let name = item.snippet.title
-//                     let listThumbnails = document.getElementById('result-list')
-//                     let modal = `
-//                         <div class="videothumbnail">
-//                             <span data-toggle="tooltip" data-placement="top" title="Click to listen on youtube">
-//                                 <img class="thumbnail vungChon" data-toggle="modal" data-target="#myModal" src="${image}" alt="${name}" data-id="${id}">
-//                                 <p class="desc vungChon title-thumbnail" target="_top" data-toggle="modal" data-target="#myModal" data-id="${id}">${name}</p>
-//                             </span>
-//                         </div>
-//                     `
-
-//                     listThumbnails.innerHTML += modal
-//                 })
-//             }
-//         })
-//     })
-// })
+let nextPageToken
 $(document).ready(function(){
-    let input = document.getElementById('keyword')
+    let form = $('#search')
+    
+    form.submit(function(e){
+        e.preventDefault()
 
-    input.onkeypress = function() {
-        setTimeout(function() {
-            let keyword = input.value
-            let api = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&type=video&key=AIzaSyCR-MWGP-Dk3TI4iKJDxwiOAuOa-j1PbEc`
+        let keyword = form[0].keyword.value
+        let api = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&type=video&key=AIzaSyCR-MWGP-Dk3TI4iKJDxwiOAuOa-j1PbEc`
 
-            $('#result-list').html('')
-            $.ajax({
-                url: api,
-                method: 'GET',
-                success: function(result){
-                    console.log(result)
-                    var nextPageToken = result.nextPageToken
-                    console.log(nextPageToken)
+        $('#result-list').html('')
+        $.ajax({
+            url: api,
+            method: 'GET',
+            success: function(result){
+                console.log(result)
+                nextPageToken = result.nextPageToken
 
-                    result.items.map(function(item){
-                        let id = item.id.videoId
-                        let image = item.snippet.thumbnails.high.url
-                        let name = item.snippet.title
-                        let listThumbnails = document.getElementById('result-list')
-                        let modal = `
-                            <div class="videothumbnail">
-                                <span data-toggle="tooltip" data-placement="top" title="Click to listen on youtube">
-                                    <img class="thumbnail vungChon" data-toggle="modal" data-target="#myModal" src="${image}" alt="${name}" data-id="${id}">
-                                    <p class="desc vungChon title-thumbnail" target="_top" data-toggle="modal" data-target="#myModal" data-id="${id}">${name}</p>
-                                </span>
-                            </div>
-                        `
+                result.items.map(function(item){
+                    let id = item.id.videoId
+                    let image = item.snippet.thumbnails.high.url
+                    let name = item.snippet.title
+                    let listThumbnails = document.getElementById('result-list')
+                    let modal = `
+                        <div class="videothumbnail">
+                            <span data-toggle="tooltip" data-placement="top" title="Click to listen on youtube">
+                                <img class="thumbnail vungChon" data-toggle="modal" data-target="#myModal" src="${image}" alt="${name}" data-id="${id}">
+                                <p class="desc vungChon title-thumbnail" target="_top" data-toggle="modal" data-target="#myModal" data-id="${id}">${name}</p>
+                            </span>
+                        </div>
+                    `
 
-                        listThumbnails.innerHTML += modal
-                    })
-                }
-            })
-        }, 1000)
-    }
+                    listThumbnails.innerHTML += modal
+                })
+            }
+        })
+    })
 })
+
+// sau 1s thì mới trả về kết quả
+// let lastTimeoutId
+// $(document).ready(function(){
+//     let input = document.getElementById('keyword')
+
+//     input.oninput = function() {
+//         clearTimeout(lastTimeoutId)
+//         lastTimeoutId = setTimeout(() => {
+//             let keyword = $('#keyword').value
+            
+//             let api = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&type=video&key=AIzaSyCR-MWGP-Dk3TI4iKJDxwiOAuOa-j1PbEc`
+    
+//             $('#result-list').html('')
+//             $.ajax({
+//                 url: api,
+//                 method: 'GET',
+//                 success: function(result){
+//                     console.log(result)
+//                     nextPageToken = result.nextPageToken
+//                     console.log(nextPageToken)
+    
+//                     result.items.map(function(item){
+//                         let id = item.id.videoId
+//                         let image = item.snippet.thumbnails.high.url
+//                         let name = item.snippet.title
+//                         let listThumbnails = document.getElementById('result-list')
+//                         let modal = `
+//                             <div class="videothumbnail">
+//                                 <span data-toggle="tooltip" data-placement="top" title="Click to listen on youtube">
+//                                     <img class="thumbnail vungChon" data-toggle="modal" data-target="#myModal" src="${image}" alt="${name}" data-id="${id}">
+//                                     <p class="desc vungChon title-thumbnail" target="_top" data-toggle="modal" data-target="#myModal" data-id="${id}">${name}</p>
+//                                 </span>
+//                             </div>
+//                         `
+    
+//                         listThumbnails.innerHTML += modal
+//                     })
+//                 }
+//             })
+//         }, 1000)
+//     }
+// })
 
 let isLoadMore = false
 
 $(document).on('scroll', function(e){
-    if($(document).scrollTop() + 1 >= $(document).height() - $(window).height() && !isLoadMore){
+    if($(document).scrollTop() + 2 >= $(document).height() - $(window).height() && !isLoadMore){
         isLoadMore = true
-        // console.log(nextPageToken)
-        // let api = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&type=video&key=AIzaSyCR-MWGP-Dk3TI4iKJDxwiOAuOa-j1PbEc&pageToken=${nextPageToken}`
+        console.log(isLoadMore)
+ 
+        let api = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${nextPageToken}&type=video&key=AIzaSyCR-MWGP-Dk3TI4iKJDxwiOAuOa-j1PbEc`
 
-        // $.ajax({
-        //     url: api,
-        //     method: 'GET',
-        //     success: function(result){
-        //         console.log(result)
-        //     }
-        // })
+        $.ajax({
+            url: api,
+            method: 'GET',
+            success: function(result){
+
+                console.log(nextPageToken)
+                result.items.map(function(item){
+                    let id = item.id.videoId
+                    let image = item.snippet.thumbnails.high.url
+                    let name = item.snippet.title
+                    let listThumbnails = document.getElementById('result-list')
+                    let modal = `
+                        <div class="videothumbnail">
+                            <span data-toggle="tooltip" data-placement="top" title="Click to listen on youtube">
+                                <img class="thumbnail vungChon" data-toggle="modal" data-target="#myModal" src="${image}" alt="${name}" data-id="${id}">
+                                <p class="desc vungChon title-thumbnail" target="_top" data-toggle="modal" data-target="#myModal" data-id="${id}">${name}</p>
+                            </span>
+                        </div>
+                    `
+
+                    listThumbnails.innerHTML += modal
+                })
+            }
+        })
     }
 })

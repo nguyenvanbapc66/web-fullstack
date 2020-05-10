@@ -9,6 +9,10 @@
     height: 100vh;
 }
 
+.first-row {
+    height: 650px;
+}
+
 .video {
     display: flex;
     flex-direction: column;
@@ -16,6 +20,7 @@
 
 .thumbnail {
     padding: 0;
+    cursor: pointer;
 }
 
 .title-thumbnail {
