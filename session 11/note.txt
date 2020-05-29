@@ -1,0 +1,8 @@
+MongoDB 2
+1. Yêu cầu bài toán
+    - XĐ các thực thể (entity)
+        VD: games, users, rounds
+        games: - users: - username
+                - rounds: - scores
+                            - roundnumber
+    - XĐ mối quan hệ giữa các entity: 1 - nhiều, nhiều - nhiều, 1- 1

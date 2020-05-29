@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanpage</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg nav-bar d-flex justify-content-between">
+        <a class="navbar-brand text-white" href="#">Fanpage</a>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success text-white my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <span id="username"></span>
+        <button class="btn text-white"><i class="fas fa-sign-out-alt"></i></button>
+    </nav>
+    <section class="d-flex flex-row">
+        <div id="list-btn" class="left-side">
+            <a id="introduction" class="nav-link link active" href="#">Giới thiệu</a>
+            <a id="discuss" class="nav-link link" href="#">Thảo luận</a>
+            <a id="members" class="nav-link link" href="#">Thành viên</a>
+        </div>
+        <div class="mid-side float-right">
+            <div id="introductionDetail" class="introduction nav-link">
+                <h4>♚ ĐIỀU KIỆN THAM GIA Group</h4>
+                <br>
+                (Xác nhận acc là chính chủ, có hoạt động, tương tác)
+                <br>
+                - INBOX TÊN THẬT, ĐỘ TUỔI CHO ADMIN
+                (No fake -  Over 18 +)
+                <br>
+                - GROUP NÀY CHỈ CÓ 1 KHÔNG CÓ SẢN PHẦM THỨ 2 - LIÊN TỤC LỌC GIỚI HẠN THÀNH VIÊN
+            </div>
+            <div id="formPosting" class="form-posting nav-link inactive">
+                <form id="form-posting">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"><i class="fas fa-pen"></i> Viết bài</label>
+                        <textarea name="status" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary">Đăng</button>
+                </form>
+            </div>
+            <div id="discussDetail" class="discuss inactive">
+                <div class="form-discuss">
+                    <h5>Nguyen van Ba</h5>
+                    <div class="status">Chao moi ngwoi</div>
+                </div>
+            </div>
+            <div id="membersDeltail" class="members nav-link inactive">
+                <div>
+                    <h5>Thành viên
+                        <span id="sumOfMembers"></span>
+                    </h5>
+                </div>
+                <div id="allOfMember"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../public/fanpage.js"></script>
+</body>
+</html>

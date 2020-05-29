@@ -1,0 +1,3 @@
+JSON web token: - header: agorithm to encode token
+                - payload: {user_id:...; user_name:...}
+                - signnature: scretkey + encode (payload + header)
